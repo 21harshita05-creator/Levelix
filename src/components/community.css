@@ -1,0 +1,1045 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap");
+
+/* =========================================
+   COMMUNITY PAGE — DUSTY ROSE THEME
+   Scoped to prevent App.css conflicts
+========================================= */
+
+.community-page {
+  --community-bg: #BFA1AB;
+  --community-section: #E8D9DD;
+  --community-card: #DCC4CA;
+  --community-accent: #95616F;
+  --community-dark: #67434F;
+  --community-coral: #B78391;
+  --community-text: #38252D;
+  --community-muted: #654D56;
+  --community-border: rgba(103, 67, 79, 0.22);
+
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 145px 24px 60px;
+  overflow-x: hidden;
+
+  color: var(--community-text);
+  font-family: "Inter", sans-serif;
+
+  background-color: var(--community-bg);
+  background-image:
+    radial-gradient(
+      circle at 10% 5%,
+      rgba(232, 217, 221, 0.45),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(149, 97, 111, 0.13),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 50% 85%,
+      rgba(183, 131, 145, 0.12),
+      transparent 35%
+    );
+
+  box-sizing: border-box;
+}
+
+.community-page *,
+.community-page *::before,
+.community-page *::after {
+  box-sizing: border-box;
+}
+
+.community-page button,
+.community-page input,
+.community-page textarea {
+  font-family: inherit;
+}
+
+.community-page button {
+  cursor: pointer;
+}
+
+.community-page a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================================
+   NAVBAR — MATCHES LOGIN PAGE
+========================================= */
+
+.community-page .levelix-navbar {
+  position: fixed;
+  top: 18px;
+  left: 40px;
+  right: 40px;
+  z-index: 1000;
+
+  min-height: 76px;
+  padding: 16px 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  background: rgba(232, 217, 221, 0.96);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(103, 67, 79, 0.22);
+  border-radius: 18px;
+
+  box-shadow: 0 10px 32px rgba(65, 39, 49, 0.14);
+}
+
+/* Logo */
+
+.community-page .levelix-logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.community-page .levelix-logo a {
+  display: inline-flex;
+  align-items: center;
+  gap: 25px;
+
+  color: var(--community-text);
+  text-decoration: none;
+}
+
+.community-page .levelix-logo img {
+  display: block;
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  transform: scale(2);
+}
+
+.community-page .levelix-logo span {
+  color: var(--community-text);
+  font-family: "Poppins", sans-serif;
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+/* Navigation actions */
+
+.community-page .nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Home button */
+
+.community-page .levelix-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 100px;
+  padding: 12px 24px;
+
+  color: var(--community-dark);
+  background: var(--community-section);
+
+  border: 1px solid rgba(103, 67, 79, 0.28);
+  border-radius: 10px;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.community-page .levelix-btn-primary {
+  color: var(--community-dark);
+  background: var(--community-section);
+  border-color: rgba(103, 67, 79, 0.28);
+}
+
+.community-page .levelix-btn:hover,
+.community-page .levelix-btn-primary:hover {
+  color: var(--community-dark);
+  background: var(--community-card);
+  border-color: var(--community-accent);
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(103, 67, 79, 0.12);
+}
+
+.community-page .levelix-btn:focus-visible,
+.community-page .levelix-logo a:focus-visible {
+  outline: 3px solid var(--community-accent);
+  outline-offset: 4px;
+}
+
+/* Mobile menu button */
+
+.community-page .mobile-menu-button {
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+  padding: 0;
+
+  color: var(--community-dark);
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+
+  font-size: 25px;
+}
+
+.community-page .mobile-menu-button:hover {
+  background: rgba(149, 97, 111, 0.12);
+}
+
+.community-page .mobile-menu-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Mobile dropdown */
+
+.community-page .mobile-menu {
+  display: none;
+}
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.community-page .community-shell {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.community-page .community-hero {
+  margin-bottom: 42px;
+  text-align: center;
+}
+
+.community-page .community-eyebrow {
+  margin-bottom: 10px;
+
+  color: var(--community-accent);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.community-page .community-hero h1 {
+  margin: 10px 0 14px;
+
+  color: var(--community-text);
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(32px, 5vw, 46px);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.community-page .community-hero h1 span {
+  color: var(--community-accent);
+}
+
+.community-page .community-description {
+  max-width: 600px;
+  margin: 12px auto;
+
+  color: var(--community-muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   COMMUNITY STATISTICS
+========================================= */
+
+.community-page .community-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+
+  margin-bottom: 45px;
+}
+
+.community-page .community-stat-pill {
+  min-width: 0;
+  padding: 22px 16px;
+
+  text-align: center;
+
+  background: rgba(232, 217, 221, 0.78);
+  border: 1px solid var(--community-border);
+  border-radius: 15px;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.community-page .community-stat-pill:hover {
+  transform: translateY(-3px);
+  border-color: var(--community-accent);
+  box-shadow: 0 10px 30px rgba(103, 67, 79, 0.12);
+}
+
+.community-page .community-stat-pill h3 {
+  margin-bottom: 7px;
+
+  color: var(--community-dark);
+  font-family: "Poppins", sans-serif;
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.community-page .community-stat-pill p {
+  margin: 0;
+
+  color: var(--community-muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* =========================================
+   CONTENT SECTIONS
+========================================= */
+
+.community-page .community-section {
+  margin-bottom: 55px;
+}
+
+.community-page .community-section > h2 {
+  margin: 0 0 8px;
+
+  color: var(--community-text);
+  font-family: "Poppins", sans-serif;
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.community-page .section-description {
+  margin: 0 0 22px;
+
+  color: var(--community-muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   NEW DISCUSSION FORM
+========================================= */
+
+.community-page .forum-new-post-card {
+  margin-bottom: 20px;
+  padding: 24px;
+
+  background: rgba(232, 217, 221, 0.82);
+  border: 1px solid var(--community-border);
+  border-radius: 15px;
+}
+
+.community-page .forum-new-post-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  width: 100%;
+}
+
+.community-page .forum-new-post-card input,
+.community-page .forum-new-post-card textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 13px 14px;
+
+  color: var(--community-text);
+  background: rgba(255, 255, 255, 0.65);
+
+  border: 1px solid rgba(103, 67, 79, 0.25);
+  border-radius: 9px;
+
+  font-size: 14px;
+  line-height: 1.5;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.community-page .forum-new-post-card input {
+  min-height: 47px;
+}
+
+.community-page .forum-new-post-card textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.community-page .forum-new-post-card input::placeholder,
+.community-page .forum-new-post-card textarea::placeholder {
+  color: #927680;
+}
+
+.community-page .forum-new-post-card input:focus,
+.community-page .forum-new-post-card textarea:focus {
+  background: #F8EFF1;
+  border-color: var(--community-accent);
+  box-shadow: 0 0 0 3px rgba(149, 97, 111, 0.13);
+}
+
+.community-page .forum-new-post-card button,
+.community-page .event-card button {
+  min-height: 43px;
+  padding: 11px 20px;
+
+  color: #FFFFFF;
+  background: linear-gradient(
+    135deg,
+    #67434F,
+    #95616F,
+    #B78391
+  );
+
+  border: 1px solid transparent;
+  border-radius: 9px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+.community-page .forum-new-post-card button {
+  align-self: flex-start;
+}
+
+.community-page .forum-new-post-card button:hover,
+.community-page .event-card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(103, 67, 79, 0.18);
+  filter: brightness(1.05);
+}
+
+.community-page .forum-new-post-card button:focus-visible,
+.community-page .event-card button:focus-visible {
+  outline: 3px solid var(--community-accent);
+  outline-offset: 3px;
+}
+
+/* Links inside the login prompt */
+
+.community-page .forum-new-post-card .levelix-btn {
+  align-self: flex-start;
+  margin-top: 5px;
+}
+
+/* =========================================
+   DISCUSSION LIST
+========================================= */
+
+.community-page .forum-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.community-page .forum-list > .section-description {
+  margin: 0;
+  padding: 20px;
+
+  background: rgba(232, 217, 221, 0.55);
+  border: 1px solid var(--community-border);
+  border-radius: 12px;
+}
+
+.community-page .forum-post-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+
+  min-width: 0;
+  padding: 20px;
+
+  background: rgba(232, 217, 221, 0.82);
+  border: 1px solid transparent;
+  border-radius: 15px;
+
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.community-page .forum-post-card:hover {
+  border-color: var(--community-border);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(65, 39, 49, 0.1);
+}
+
+/* Avatar */
+
+.community-page .forum-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+
+  color: #FFFFFF;
+  background: linear-gradient(
+    135deg,
+    #67434F,
+    #B78391
+  );
+
+  border-radius: 50%;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* Post text */
+
+.community-page .forum-post-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.community-page .post-author {
+  margin: 0;
+
+  color: var(--community-muted);
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.community-page .post-author b {
+  color: var(--community-text);
+}
+
+.community-page .forum-post-body h3 {
+  margin: 8px 0;
+
+  color: var(--community-text);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.community-page .post-text {
+  margin: 0;
+
+  color: var(--community-muted);
+  font-size: 14px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.community-page .post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+
+  margin-top: 12px;
+}
+
+.community-page .post-meta span {
+  color: var(--community-muted);
+  font-size: 12px;
+}
+
+/* =========================================
+   LEADERBOARD
+========================================= */
+
+.community-page .leaderboard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.community-page .leaderboard-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  min-width: 0;
+  padding: 16px 20px;
+
+  background: rgba(232, 217, 221, 0.82);
+  border: 1px solid transparent;
+  border-radius: 12px;
+
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.community-page .leaderboard-item:hover {
+  border-color: var(--community-border);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(65, 39, 49, 0.08);
+}
+
+.community-page .leaderboard-rank {
+  min-width: 35px;
+
+  color: var(--community-accent);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.community-page .leaderboard-user {
+  flex: 1;
+  min-width: 0;
+}
+
+.community-page .leaderboard-user h4 {
+  margin: 0 0 4px;
+
+  color: var(--community-text);
+  font-size: 14px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.community-page .leaderboard-user p {
+  margin: 0;
+
+  color: var(--community-muted);
+  font-size: 12px;
+}
+
+.community-page .leaderboard-xp {
+  flex-shrink: 0;
+
+  color: var(--community-accent);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* =========================================
+   LEARNING PROGRESS BAR
+   Supports the inline progress bar in JSX
+========================================= */
+
+.community-page [role="progressbar"] {
+  max-width: 100%;
+}
+
+/* =========================================
+   UPCOMING EVENTS
+========================================= */
+
+.community-page .events-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.community-page .event-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  min-width: 0;
+  padding: 20px;
+
+  background: rgba(232, 217, 221, 0.82);
+  border: 1px solid transparent;
+  border-radius: 15px;
+
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.community-page .event-card:hover {
+  border-color: var(--community-border);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(65, 39, 49, 0.1);
+}
+
+.community-page .event-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 60px;
+  min-height: 65px;
+  padding: 8px;
+
+  background: linear-gradient(
+    135deg,
+    #67434F,
+    #95616F
+  );
+
+  border-radius: 10px;
+}
+
+.community-page .event-date h2 {
+  margin: 0;
+
+  color: #FFFFFF;
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+.community-page .event-date p {
+  margin: 2px 0 0;
+
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.community-page .event-info {
+  flex: 1;
+  width: 100%;
+  margin: 16px 0;
+}
+
+.community-page .event-info h3 {
+  margin: 0 0 8px;
+
+  color: var(--community-text);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.community-page .event-info p {
+  margin: 0;
+
+  color: var(--community-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.community-page .event-card button {
+  width: 100%;
+  margin-top: auto;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .community-page .levelix-navbar {
+    left: 24px;
+    right: 24px;
+    padding: 16px 32px;
+  }
+
+  .community-page .events-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================
+   MOBILE NAVBAR + PAGE
+========================================= */
+
+@media (max-width: 767px) {
+  .community-page {
+    padding: 115px 20px 45px;
+  }
+
+  .community-page .levelix-navbar {
+    top: 12px;
+    left: 12px;
+    right: 12px;
+
+    min-height: 65px;
+    padding: 14px 20px;
+
+    border-radius: 15px;
+  }
+
+  .community-page .levelix-logo {
+    gap: 15px;
+  }
+
+  .community-page .levelix-logo a {
+    gap: 15px;
+  }
+
+  .community-page .levelix-logo img {
+    width: 23px;
+    height: 23px;
+    transform: scale(1.7);
+  }
+
+  .community-page .levelix-logo span {
+    font-size: 19px;
+  }
+
+  .community-page .nav-actions {
+    display: none;
+  }
+
+  .community-page .mobile-menu-button {
+    display: inline-flex;
+  }
+
+  .community-page .mobile-menu {
+    position: fixed;
+    top: 86px;
+    left: 12px;
+    right: 12px;
+    z-index: 999;
+
+    flex-direction: column;
+    gap: 8px;
+
+    padding: 16px 22px;
+
+    background: rgba(232, 217, 221, 0.98);
+    border: 1px solid var(--community-border);
+    border-radius: 14px;
+
+    box-shadow: 0 12px 30px rgba(65, 39, 49, 0.15);
+  }
+
+  .community-page .mobile-menu.show {
+    display: flex;
+  }
+
+  .community-page .mobile-menu a {
+    display: block;
+    padding: 10px 0;
+
+    color: var(--community-dark);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .community-page .mobile-menu a:hover {
+    color: var(--community-accent);
+  }
+
+  .community-page .community-hero {
+    margin-bottom: 32px;
+  }
+
+  .community-page .community-hero h1 {
+    font-size: 34px;
+  }
+
+  .community-page .community-description {
+    font-size: 14px;
+  }
+
+  .community-page .community-stats {
+    gap: 12px;
+    margin-bottom: 38px;
+  }
+
+  .community-page .community-stat-pill {
+    padding: 18px 12px;
+  }
+
+  .community-page .community-section {
+    margin-bottom: 45px;
+  }
+
+  .community-page .community-section > h2 {
+    font-size: 22px;
+  }
+
+  .community-page .forum-new-post-card {
+    padding: 18px;
+  }
+
+  .community-page .forum-post-card {
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .community-page .forum-avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .community-page .forum-post-body h3 {
+    font-size: 16px;
+  }
+
+  .community-page .post-text {
+    font-size: 13px;
+  }
+
+  .community-page .leaderboard-item {
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .community-page .events-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .community-page .event-card {
+    display: grid;
+    grid-template-columns: 60px minmax(0, 1fr);
+    column-gap: 16px;
+    align-items: center;
+  }
+
+  .community-page .event-date {
+    grid-row: 1 / span 2;
+  }
+
+  .community-page .event-info {
+    margin: 0;
+  }
+
+  .community-page .event-card button {
+    grid-column: 1 / -1;
+    margin-top: 16px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .community-page {
+    padding: 108px 14px 35px;
+  }
+
+  .community-page .levelix-navbar {
+    padding: 12px 16px;
+  }
+
+  .community-page .levelix-logo,
+  .community-page .levelix-logo a {
+    gap: 13px;
+  }
+
+  .community-page .levelix-logo span {
+    font-size: 18px;
+  }
+
+  .community-page .community-hero h1 {
+    font-size: 30px;
+  }
+
+  .community-page .community-description {
+    font-size: 13px;
+  }
+
+  .community-page .community-stats {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .community-page .community-stat-pill {
+    padding: 16px;
+  }
+
+  .community-page .community-stat-pill h3 {
+    font-size: 21px;
+  }
+
+  .community-page .community-section > h2 {
+    font-size: 21px;
+  }
+
+  .community-page .forum-new-post-card {
+    padding: 15px;
+  }
+
+  .community-page .forum-post-card {
+    padding: 14px;
+  }
+
+  .community-page .leaderboard-item {
+    gap: 9px;
+  }
+
+  .community-page .leaderboard-rank {
+    min-width: 28px;
+  }
+
+  .community-page .leaderboard-user h4 {
+    font-size: 13px;
+  }
+
+  .community-page .leaderboard-xp {
+    font-size: 11px;
+  }
+
+  .community-page .post-meta {
+    gap: 10px;
+  }
+
+  .community-page .post-meta span {
+    font-size: 11px;
+  }
+
+  .community-page .event-card {
+    padding: 16px;
+    column-gap: 12px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .community-page *,
+  .community-page *::before,
+  .community-page *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

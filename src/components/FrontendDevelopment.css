@@ -1,0 +1,204 @@
+/* =========================================================
+   FRONTEND DEVELOPMENT PAGE — ISOLATED DUSTY-ROSE THEME
+   All rules are scoped so they do not style other app pages.
+========================================================= */
+
+@scope (.frontend-page) {
+  :scope {
+    width: 100%;
+    min-height: 100vh;
+    background: #BFA1AB;
+    color: #38252D;
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  /* Navbar */
+  .frontend-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    min-height: 82px;
+    padding: 12px 6%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: 20px;
+    background: rgba(232, 217, 221, 0.96);
+    border-bottom: 1px solid rgba(103, 67, 79, 0.15);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .frontend-logo {
+    justify-self: start;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #67434F;
+    font-family: inherit;
+    cursor: pointer;
+  }
+
+  .levelix-logo { display: block; width: 56px; height: 56px; object-fit: contain; }
+  .logo-text { color: #67434F; font-size: 25px; font-weight: 800; letter-spacing: -0.5px; }
+  .frontend-navbar-title { justify-self: center; color: #67434F; font-size: 19px; font-weight: 800; text-align: center; }
+
+  .back-btn {
+    justify-self: end;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 11px 18px;
+    border: 1px solid #B18A96;
+    border-radius: 12px;
+    background: #F5EBEE;
+    color: #67434F;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  }
+
+  .back-btn:hover { background: #95616F; color: #FFFFFF; transform: translateY(-2px); }
+  .back-arrow { font-size: 18px; line-height: 1; }
+  .back-text { white-space: nowrap; }
+
+  /* Hero */
+  .frontend-hero { padding: 55px 6% 35px; }
+  .frontend-hero h1 { margin: 0 0 14px; color: #38252D; font-size: clamp(30px, 4vw, 48px); font-weight: 800; letter-spacing: -1.5px; }
+  .frontend-hero h1 span { color: #67434F; }
+  .frontend-hero > p { max-width: 720px; margin: 0; color: #654D56; font-size: 16px; line-height: 1.8; }
+
+  /* Stats */
+  .learning-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; padding: 0 6% 40px; }
+  .stat-card { display: flex; flex-direction: column; gap: 8px; padding: 24px; background: #E8D9DD; border: 1px solid rgba(149, 97, 111, 0.22); border-radius: 20px; box-shadow: 0 8px 24px rgba(56, 37, 45, 0.06); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+  .stat-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(56, 37, 45, 0.12); }
+  .stat-card strong { color: #67434F; font-size: 25px; font-weight: 800; }
+  .stat-card span { color: #654D56; font-size: 14px; }
+
+  /* Learning options */
+  .frontend-options { padding: 25px 6% 50px; }
+  .section-heading { margin: 0 0 25px; }
+  .section-heading > span { color: #80515F; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; }
+  .section-heading h2 { margin: 8px 0; color: #38252D; font-size: clamp(24px, 3vw, 32px); font-weight: 800; }
+  .section-heading p { margin: 0; color: #654D56; font-size: 14px; line-height: 1.7; }
+  .options-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+  .learning-option { position: relative; min-width: 0; padding: 28px; background: #E8D9DD; border: 1px solid rgba(149, 97, 111, 0.22); border-radius: 22px; box-shadow: 0 8px 24px rgba(56, 37, 45, 0.06); transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
+  .learning-option:hover { transform: translateY(-5px); border-color: #95616F; box-shadow: 0 16px 32px rgba(56, 37, 45, 0.12); }
+  .option-top { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-bottom: 22px; }
+  .option-icon { display: flex; align-items: center; justify-content: center; width: 58px; height: 58px; border-radius: 17px; background: #DCC4CA; color: #67434F; font-size: 28px; }
+  .option-number { color: #95616F; font-size: 13px; font-weight: 800; letter-spacing: 1px; }
+  .learning-option h3 { margin: 0 0 10px; color: #38252D; font-size: 22px; font-weight: 800; }
+  .learning-option > p { min-height: 75px; margin: 0 0 22px; color: #654D56; font-size: 14px; line-height: 1.8; }
+
+  .option-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 12px;
+    background: #95616F;
+    color: #FFFFFF;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  }
+  .option-btn:hover:not(:disabled) { background: #67434F; box-shadow: 0 6px 16px rgba(103, 67, 79, 0.2); transform: translateY(-2px); }
+  .option-btn:disabled { opacity: 0.65; cursor: not-allowed; }
+  .option-btn-arrow { font-size: 18px; transition: transform 0.25s ease; }
+  .option-btn:hover .option-btn-arrow { transform: translateX(4px); }
+  .roadmap .option-icon { background: #DCC4CA; color: #67434F; }
+  .courses .option-icon { background: #E3CDD3; color: #80515F; }
+  .games .option-icon { background: #EAD5DA; color: #95616F; }
+  .practice .option-icon { background: #D8BFC7; color: #67434F; }
+
+  /* Progress and learning goal */
+  .progress-section { padding: 15px 6% 45px; }
+  .progress-card { display: flex; align-items: flex-start; justify-content: space-between; gap: 30px; padding: 30px; background: #E8D9DD; border: 1px solid rgba(149, 97, 111, 0.25); border-radius: 22px; box-shadow: 0 8px 24px rgba(56, 37, 45, 0.06); }
+  .progress-content { flex: 1; min-width: 0; }
+  .progress-content > span { color: #95616F; font-size: 11px; font-weight: 800; letter-spacing: 1.4px; }
+  .progress-content h3 { margin: 8px 0; color: #38252D; font-size: 22px; font-weight: 800; }
+  .progress-content > p { margin: 0; color: #654D56; font-size: 14px; line-height: 1.7; }
+  .progress-content form { display: flex; flex-direction: column; gap: 16px; margin-top: 22px; }
+  .form-field { display: flex; flex-direction: column; gap: 8px; }
+  .progress-content label { color: #67434F; font-size: 13px; font-weight: 700; }
+  .progress-content input, .progress-content select, .progress-content textarea { width: 100%; box-sizing: border-box; padding: 13px 15px; border: 1px solid #C7A8B2; border-radius: 12px; outline: none; background: #F5EBEE; color: #38252D; font-family: inherit; font-size: 14px; transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+  .progress-content input:focus, .progress-content select:focus, .progress-content textarea:focus { border-color: #95616F; box-shadow: 0 0 0 3px rgba(149, 97, 111, 0.14); }
+  .progress-content input::placeholder, .progress-content textarea::placeholder { color: #8B707A; }
+  .progress-content form button { align-self: flex-start; }
+  .current-goal { margin-top: 20px !important; overflow-wrap: anywhere; }
+  .current-goal strong { color: #67434F; }
+  .goal-error, .goal-success { margin: 0; font-size: 13px; font-weight: 600; line-height: 1.6; }
+  .goal-error { color: #A12645 !important; }
+  .goal-success { color: #4F704C !important; }
+
+  /* Redux progress summary */
+  .progress-summary-card { align-items: center; }
+  .progress-left { display: flex; align-items: flex-start; gap: 20px; flex: 1; min-width: 0; }
+  .progress-icon { display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 58px; height: 58px; border-radius: 17px; background: #DCC4CA; color: #67434F; font-size: 26px; }
+  .progress-right { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; width: 35%; min-width: 220px; }
+  .progress-percentage { color: #67434F; font-size: 30px; font-weight: 800; }
+  .progress-bar { width: 100%; height: 10px; overflow: hidden; border-radius: 20px; background: #DCC4CA; }
+  .progress-fill { height: 100%; border-radius: 20px; background: linear-gradient(90deg, #95616F, #B78391); transition: width 0.4s ease; }
+  .module-count { color: #654D56; font-size: 13px; line-height: 1.6; }
+  .xp-total { margin: 0; color: #67434F; font-size: 14px; font-weight: 700; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .frontend-navbar { padding: 12px 4%; gap: 12px; }
+    .frontend-navbar-title { font-size: 16px; }
+    .levelix-logo { width: 46px; height: 46px; }
+    .logo-text { font-size: 22px; }
+    .back-btn { padding: 10px 12px; font-size: 12px; }
+    .learning-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .progress-card { gap: 22px; }
+  }
+
+  @media (max-width: 650px) {
+    .frontend-navbar { min-height: 72px; grid-template-columns: 1fr auto; gap: 10px; padding: 10px 5%; }
+    .frontend-navbar-title { display: none; }
+    .levelix-logo { width: 42px; height: 42px; }
+    .logo-text { font-size: 21px; }
+    .back-btn { padding: 9px 11px; gap: 6px; }
+    .frontend-hero { padding: 38px 5% 25px; }
+    .learning-stats { padding: 0 5% 30px; gap: 14px; }
+    .frontend-options { padding: 20px 5% 35px; }
+    .options-grid { grid-template-columns: 1fr; gap: 18px; }
+    .learning-option { padding: 24px; }
+    .learning-option > p { min-height: 0; }
+    .progress-section { padding: 10px 5% 35px; }
+    .progress-card { flex-direction: column; align-items: stretch; padding: 22px; }
+    .progress-right { width: 100%; min-width: 0; }
+    .progress-summary-card .progress-left { align-items: flex-start; }
+  }
+
+  @media (max-width: 400px) {
+    .frontend-navbar { padding: 10px 4%; }
+    .frontend-logo { gap: 7px; }
+    .levelix-logo { width: 36px; height: 36px; }
+    .logo-text { font-size: 19px; }
+    .back-btn { padding: 8px 9px; font-size: 11px; }
+    .back-arrow { font-size: 16px; }
+    .frontend-hero h1 { font-size: 30px; }
+    .learning-stats { grid-template-columns: 1fr; }
+    .stat-card { padding: 20px; }
+    .learning-option { padding: 20px; }
+    .progress-left { gap: 12px; }
+    .progress-icon { width: 44px; height: 44px; }
+  }
+}

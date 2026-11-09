@@ -1,0 +1,718 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap");
+
+/* =========================================
+   HELP PAGE THEME
+========================================= */
+
+.help-page {
+  --help-bg: #BFA1AB;
+  --help-section: #E8D9DD;
+  --help-card: #DCC4CA;
+  --help-accent: #95616F;
+  --help-dark: #67434F;
+  --help-text: #38252D;
+  --help-muted: #654D56;
+  --help-border: rgba(103, 67, 79, 0.22);
+
+  min-height: 100vh;
+  padding: 125px 24px 0;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  background: var(--help-bg);
+  color: var(--help-text);
+  font-family: "Inter", sans-serif;
+}
+
+.help-page *,
+.help-page *::before,
+.help-page *::after {
+  box-sizing: border-box;
+}
+
+.help-page button,
+.help-page input,
+.help-page textarea {
+  font: inherit;
+}
+
+.help-page button {
+  cursor: pointer;
+}
+
+.help-page a {
+  color: inherit;
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.help-page .help-navbar {
+  position: fixed;
+  top: 18px;
+  left: 40px;
+  right: 40px;
+  z-index: 1000;
+
+  min-height: 76px;
+  padding: 16px 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  background: rgba(232, 217, 221, 0.96);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid var(--help-border);
+  border-radius: 18px;
+
+  box-shadow: 0 10px 32px rgba(65, 39, 49, 0.14);
+}
+
+.help-page .help-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 25px;
+
+  color: var(--help-text);
+  text-decoration: none;
+}
+
+.help-page .help-logo img {
+  display: block;
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  transform: scale(2);
+}
+
+.help-page .help-logo span {
+  color: var(--help-text);
+  font-family: "Poppins", sans-serif;
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.help-page .help-home-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 100px;
+  padding: 12px 24px;
+
+  color: var(--help-dark);
+  background: var(--help-section);
+
+  border: 1px solid rgba(103, 67, 79, 0.28);
+  border-radius: 10px;
+
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.help-page .help-home-button:hover {
+  background: var(--help-card);
+  border-color: var(--help-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(103, 67, 79, 0.12);
+}
+
+.help-page .help-logo:focus-visible,
+.help-page .help-home-button:focus-visible {
+  outline: 3px solid var(--help-accent);
+  outline-offset: 4px;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.help-page .help-hero {
+  width: 100%;
+  max-width: 850px;
+  margin: 45px auto 85px;
+  text-align: center;
+}
+
+.help-page .help-tag {
+  display: inline-block;
+  margin: 0 0 22px;
+  padding: 10px 18px;
+
+  color: var(--help-dark);
+  background: rgba(232, 217, 221, 0.75);
+
+  border: 1px solid var(--help-border);
+  border-radius: 30px;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.help-page .help-hero h1 {
+  margin: 0 0 22px;
+
+  color: var(--help-text);
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(38px, 6vw, 64px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -2px;
+}
+
+.help-page .help-hero h1 span {
+  color: var(--help-dark);
+}
+
+.help-page .help-text {
+  max-width: 650px;
+  margin: 0 auto 30px;
+
+  color: var(--help-muted);
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.help-page .help-search-label {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 8px;
+
+  color: var(--help-dark);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.help-page .help-search {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  min-height: 58px;
+  margin: 0 auto;
+  padding: 16px 22px;
+
+  color: var(--help-text);
+  background: var(--help-section);
+
+  border: 1px solid var(--help-border);
+  border-radius: 14px;
+  outline: none;
+
+  font-size: 15px;
+
+  box-shadow: 0 8px 24px rgba(65, 39, 49, 0.06);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.help-page .help-search::placeholder {
+  color: #856A74;
+}
+
+.help-page .help-search:focus {
+  border-color: var(--help-accent);
+  box-shadow: 0 0 0 4px rgba(149, 97, 111, 0.15);
+}
+
+/* =========================================
+   SHARED SECTION STYLES
+========================================= */
+
+.help-page .help-section,
+.help-page .help-faq,
+.help-page .help-support {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto 85px;
+}
+
+.help-page .help-section h2,
+.help-page .help-faq h2,
+.help-page .help-support h2 {
+  margin: 0 0 12px;
+
+  color: var(--help-text);
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(26px, 4vw, 36px);
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.help-page .help-gray {
+  color: var(--help-muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.help-page .help-section > .help-gray,
+.help-page .help-faq > .help-gray {
+  margin: 8px 0;
+}
+
+/* =========================================
+   CATEGORY CARDS
+========================================= */
+
+.help-page .help-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.help-page .help-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  min-width: 0;
+  min-height: 290px;
+  padding: 28px;
+
+  background: rgba(232, 217, 221, 0.86);
+  border: 1px solid var(--help-border);
+  border-radius: 20px;
+
+  box-shadow: 0 8px 24px rgba(65, 39, 49, 0.06);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.help-page .help-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(103, 67, 79, 0.42);
+  box-shadow: 0 16px 35px rgba(65, 39, 49, 0.12);
+}
+
+.help-page .help-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 58px;
+  height: 58px;
+  margin-bottom: 22px;
+
+  background: var(--help-card);
+  border: 1px solid var(--help-border);
+  border-radius: 16px;
+
+  font-size: 28px;
+}
+
+.help-page .help-card h3 {
+  margin: 0 0 12px;
+
+  color: var(--help-text);
+  font-family: "Poppins", sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.help-page .help-card > p {
+  flex: 1;
+  margin: 0 0 22px;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.help-page .help-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 44px;
+  padding: 12px 16px;
+
+  color: #FFFFFF;
+  background: var(--help-dark);
+
+  border: 1px solid var(--help-dark);
+  border-radius: 10px;
+
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.help-page .help-button:hover {
+  background: var(--help-accent);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 14px rgba(103, 67, 79, 0.15);
+}
+
+.help-page .help-button:focus-visible {
+  outline: 3px solid var(--help-accent);
+  outline-offset: 3px;
+}
+
+.help-page .help-card .save-category-button {
+  margin-top: 10px;
+  color: var(--help-dark);
+  background: transparent;
+}
+
+.help-page .help-card .save-category-button:hover {
+  background: var(--help-card);
+}
+
+/* =========================================
+   FAQ
+========================================= */
+
+.help-page .help-questions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.help-page .help-question {
+  overflow: hidden;
+
+  background: rgba(232, 217, 221, 0.88);
+  border: 1px solid var(--help-border);
+  border-radius: 14px;
+}
+
+.help-page .help-question-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  width: 100%;
+  padding: 21px 24px;
+
+  color: var(--help-text);
+  background: transparent;
+  border: none;
+
+  font-size: 15px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.help-page .help-question-button > span:last-child {
+  color: var(--help-dark);
+  font-size: 24px;
+}
+
+.help-page .help-question-button:hover {
+  background: rgba(220, 196, 202, 0.5);
+}
+
+.help-page .help-question > p {
+  margin: 0;
+  padding: 0 24px 22px;
+
+  color: var(--help-muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   SUPPORT SECTION
+========================================= */
+
+.help-page .help-support {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  align-items: start;
+  gap: 35px;
+
+  padding: 38px;
+
+  background: rgba(232, 217, 221, 0.82);
+  border: 1px solid var(--help-border);
+  border-radius: 22px;
+
+  box-shadow: 0 10px 30px rgba(65, 39, 49, 0.06);
+}
+
+.help-page .help-support-content > p {
+  margin: 10px 0 24px;
+}
+
+.help-page .help-support-content > .help-button {
+  width: auto;
+  min-width: 190px;
+}
+
+.help-page .support-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 0;
+}
+
+.help-page .support-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.help-page .support-form-group label {
+  color: var(--help-dark);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.help-page .support-form-group input,
+.help-page .support-form-group textarea {
+  width: 100%;
+  padding: 14px 15px;
+
+  color: var(--help-text);
+  background: #F4E9EC;
+
+  border: 1px solid var(--help-border);
+  border-radius: 10px;
+  outline: none;
+
+  font-size: 14px;
+  line-height: 1.6;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.help-page .support-form-group input:focus,
+.help-page .support-form-group textarea:focus {
+  border-color: var(--help-accent);
+  box-shadow: 0 0 0 3px rgba(149, 97, 111, 0.14);
+}
+
+.help-page .support-form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.help-page .support-form-message {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.help-page .support-form-error {
+  color: #8B2635;
+}
+
+.help-page .support-form-success {
+  color: var(--help-dark);
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.help-page .help-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+
+  width: calc(100% + 48px);
+  margin: 0 -24px;
+  padding: 30px 6%;
+
+  background: var(--help-section);
+  border-top: 1px solid var(--help-border);
+}
+
+.help-page .help-footer > b {
+  color: var(--help-text);
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.help-page .help-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+.help-page .help-footer-links a {
+  color: var(--help-muted);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.help-page .help-footer-links a:hover {
+  color: var(--help-dark);
+}
+
+.help-page .help-footer > span {
+  color: var(--help-muted);
+  font-size: 12px;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 900px) {
+  .help-page .help-navbar {
+    left: 24px;
+    right: 24px;
+    padding: 16px 32px;
+  }
+
+  .help-page .help-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .help-page .help-support {
+    grid-template-columns: 1fr;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .help-page {
+    padding: 105px 16px 0;
+  }
+
+  .help-page .help-navbar {
+    top: 12px;
+    left: 12px;
+    right: 12px;
+
+    min-height: 65px;
+    padding: 14px 20px;
+
+    border-radius: 15px;
+  }
+
+  .help-page .help-logo {
+    gap: 15px;
+  }
+
+  .help-page .help-logo img {
+    width: 23px;
+    height: 23px;
+    transform: scale(1.7);
+  }
+
+  .help-page .help-logo span {
+    font-size: 19px;
+  }
+
+  .help-page .help-home-button {
+    min-width: 78px;
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .help-page .help-hero {
+    margin: 35px auto 65px;
+  }
+
+  .help-page .help-hero h1 {
+    letter-spacing: -1px;
+  }
+
+  .help-page .help-text {
+    font-size: 15px;
+  }
+
+  .help-page .help-section,
+  .help-page .help-faq,
+  .help-page .help-support {
+    margin-bottom: 60px;
+  }
+
+  .help-page .help-cards {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .help-page .help-card {
+    min-height: 0;
+    padding: 24px;
+  }
+
+  .help-page .help-card > p {
+    flex: initial;
+  }
+
+  .help-page .help-support {
+    padding: 23px;
+    gap: 28px;
+  }
+
+  .help-page .help-question-button {
+    padding: 18px;
+    font-size: 14px;
+  }
+
+  .help-page .help-question > p {
+    padding: 0 18px 20px;
+  }
+
+  .help-page .help-footer {
+    width: calc(100% + 32px);
+    margin: 0 -16px;
+    padding: 27px 20px;
+
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .help-page .help-footer-links {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 360px) {
+  .help-page .help-navbar {
+    padding: 12px 15px;
+  }
+
+  .help-page .help-logo {
+    gap: 10px;
+  }
+
+  .help-page .help-logo span {
+    font-size: 17px;
+  }
+
+  .help-page .help-home-button {
+    min-width: 70px;
+    padding: 9px 12px;
+  }
+}
